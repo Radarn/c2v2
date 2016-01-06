@@ -34,7 +34,7 @@ function newBoard() {
 	document.getElementById("memory_board");
 	for (var i = 0; i < cards.length; i++) {
 		output = cards[i];	
-		alert(output);
+		console.log(output);
 		div = document.createElement("div");
 		div.id = "id_" + i;
 		div.addEventListener("click", function() {
