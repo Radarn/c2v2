@@ -55,8 +55,7 @@ function newBoard() {
     document.getElementById("memory_board");
     for (var i = 0; i < cards.length; i++) {
              
-        output = cards[i];    
-        console.log(output);
+        output = cards[i];  
         div = document.createElement("div");
         div.id = "id_" + i;
            
@@ -66,22 +65,20 @@ function newBoard() {
                 flipCards(this, _out);
            });
        })(output);
-    
-        memory_board.appendChild(div)
+
+       memory_board.appendChild(div);
     }
 }
 
 
 function flipCards(e, val) {
-	console.log(val);
 	if (cardValue.length < 2) {
-		alert(val);
-		e.style.background = "#FFF";
+		e.style.background = "coral";
 		e.innerHTML = val;
 		if (cardValue.length === 0) {
 			cardValue.push(val);
 			cardID.push(e.id);
-		} else if (cardValue === 1) {
+		} else if (cardValue.length === 1) {
 			cardValue.push(val);
 			cardID.push(e.id);
 			if (cardValue[0] === cardValue[1]) {
@@ -100,15 +97,17 @@ function flipCards(e, val) {
 					var card_1 = document.getElementById(cardID[0]);
 					var card_2 = document.getElementById(cardID[1]);
 					card_1.innerHTML = "";
-					card_1.style.background = "#CCC"
+					card_1.style.background = "url(images/cardback.jpg) no-repeat";
+					card_1.style.backgroundSize = "cover";
 					card_2.innerHTML = "";
-					card_2.style.background = "#CCC";
+					card_2.style.background = "url(images/cardback.jpg) no-repeat";
+					card_2.style.backgroundSize = "cover";
 
 					cardValue = [];
 					cardID = [];
 
 				}
-				setTimeout(hideCards, 1000);
+				setTimeout(hideCards, 700);
 			}
 		}
 	}
