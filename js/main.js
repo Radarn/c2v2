@@ -55,7 +55,7 @@ function newBoard() {
     document.getElementById("memory_board");
     for (var i = 0; i < cards.length; i++) {
              
-        output = cards[i];  
+        output = cards[i];
         div = document.createElement("div");
         div.id = "id_" + i;
            
@@ -72,33 +72,46 @@ function newBoard() {
 
 
 function flipCards(e, val) {
+	var card_1, card_2;
+
 	if (cardValue.length < 2) {
-		e.style.background = "coral";
+		e.style.background = "lightblue";
 		e.innerHTML = val;
+
 		if (cardValue.length === 0) {
-			cardValue.push(val);
+			cardValue.push(val);			
 			cardID.push(e.id);
+
 		} else if (cardValue.length === 1) {
-			cardValue.push(val);
+			cardValue.push(val);			
 			cardID.push(e.id);
-			if (cardValue[0] === cardValue[1]) {
+
+			card_1 = document.getElementById(cardID[0]);
+			card_2 = document.getElementById(cardID[1]);
+
+			if (cardValue[0] === cardValue[1] && card_1 !== card_2) {
 				cardsFlipped += 2;
+
+				card_1.style.background = "lime";
+				card_2.style.background = "lime";
 
 				cardValue = [];
 				cardID = [];
+				
+				
 
 				if (cardsFlipped === cards.length) {
 					alert("Board cleared... generating new board");
 					document.getElementById("memory_board").innerHTML = "";
+
 					newBoard();
 				}
 			} else {
 				function hideCards() {
-					var card_1 = document.getElementById(cardID[0]);
-					var card_2 = document.getElementById(cardID[1]);
 					card_1.innerHTML = "";
 					card_1.style.background = "url(images/cardback.jpg) no-repeat";
 					card_1.style.backgroundSize = "cover";
+
 					card_2.innerHTML = "";
 					card_2.style.background = "url(images/cardback.jpg) no-repeat";
 					card_2.style.backgroundSize = "cover";
@@ -107,10 +120,13 @@ function flipCards(e, val) {
 					cardID = [];
 
 				}
+			
+				card_1.style.background = "firebrick";
+				card_2.style.background = "firebrick";
+
 				setTimeout(hideCards, 700);
 			}
 		}
 	}
-
 }
 
