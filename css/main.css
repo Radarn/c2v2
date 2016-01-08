@@ -27,8 +27,8 @@
 #panel {
 	display: inline-block;
 	position: relative;
-	width: 200px;
-	bottom: 300px;
+	width: 17%;
+	bottom: 200px;
 }
 
 .score-heading,
@@ -39,6 +39,10 @@
 
 #score {
 	font-size: 5rem;
+}
+
+#song {
+	width: 100%;
 }
 
 
