@@ -1,15 +1,13 @@
-img {
-	width: 71px;
-	height: 71px;
-}
 
 #memory_board {
+	display: inline-block;
 	background: lightblue;
 	border: 1px solid #CCC;
 	width: 800px;
 	height: 540px;
 	padding: 24px;
-	margin: 0 auto;
+	
+
 }
 
 #memory_board > div {
@@ -25,3 +23,24 @@ img {
 	cursor: pointer;
 	text-align: center;
 }
+
+#panel {
+	display: inline-block;
+	position: relative;
+	width: 200px;
+	bottom: 300px;
+}
+
+.score-heading,
+#score {
+	text-align: center;
+	font-size: 3em;
+}
+
+#score {
+	font-size: 5rem;
+}
+
+
+
+

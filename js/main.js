@@ -2,6 +2,7 @@ var cards = ["A", "A", "B", "B", "C", "C", "D", "D", "E", "E", "F", "F", "G", "G
 var cardValue = [];
 var cardID = [];
 var cardsFlipped = 0;
+var scoreValue = 0;
 
 // Fisher Yates Shuffle Modern Algorithm.
 // Watch: https://www.developphp.com/video/JavaScript/Fisher-Yates-Shuffle-Modern-Algorithm-Array-Programming-Tutorial
@@ -56,8 +57,9 @@ function newBoard() {
     for (var i = 0; i < cards.length; i++) {
              
         output = cards[i];
-        div = document.createElement("div");
+        div = document.createElement("div");        
         div.id = "id_" + i;
+        div.classList.add(".front");
            
         (function (_out) {
            
@@ -91,6 +93,9 @@ function flipCards(e, val) {
 
 			if (cardValue[0] === cardValue[1] && card_1 !== card_2) {
 				cardsFlipped += 2;
+				scoreValue ++;
+				var score = document.getElementById("score");
+				score.innerHTML = scoreValue;
 
 				card_1.style.background = "lime";
 				card_2.style.background = "lime";
