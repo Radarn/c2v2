@@ -77,7 +77,7 @@ function flipCards(e, val) {
 	var card_1, card_2;
 
 	if (cardValue.length < 2) {
-		e.style.background = "lightblue";
+		e.style.background = "black";
 		e.innerHTML = val;
 
 		if (cardValue.length === 0) {
