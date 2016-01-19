@@ -3,7 +3,6 @@ var cardValue = [];
 var cardID = [];
 var cardsFlipped = 0;
 var scoreValue = 0;
-var button = document.getElementById("play");
 
 // Fisher Yates Shuffle Modern Algorithm.
 // Watch: https://www.developphp.com/video/JavaScript/Fisher-Yates-Shuffle-Modern-Algorithm-Array-Programming-Tutorial
@@ -98,8 +97,10 @@ function flipCards(e, val) {
 				var score = document.getElementById("score");
 				score.innerHTML = scoreValue;
 
-				card_1.style.background = "lime";
-				card_2.style.background = "lime";
+				card_1.style.visibility = "hidden";
+				card_2.style.visibility = "hidden";
+
+
 
 				cardValue = [];
 				cardID = [];
