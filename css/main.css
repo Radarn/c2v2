@@ -1,7 +1,11 @@
+body {
+	background-color: black;
+	color: #87D37C;
+}
 
 #memory_board {
 	display: inline-block;
-	background: lightblue;
+	background: #87D37C;
 	border: 1px solid #CCC;
 	width: 800px;
 	height: 540px;
