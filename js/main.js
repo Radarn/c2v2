@@ -25,29 +25,6 @@ Array.prototype.shuffle = function() {
 }
 
 
-
-/*function newBoard() {
-	var div;
-	var output = "";
-	cardsFlipped = 0;
-	cards.shuffle();
-	/*document.getElementById("memory_board");*/
-	/*for (var i = 0; i < cards.length; i++) {
-		output += '<div id="ID_'+i+'" onclick="flipCards(this,\''+cards[i] + '\')"></div>';
-		document.getElementById("memory_board").innerHTML = output;*/
-
-		//Can't find out how to pass second parameter in flipCards to be a unique index value.
-		/*output = cards[i];
-		div = document.createElement("div");
-		div.id = "id_" + i;
-		div.addEventListener("click", function() {
-			flipCards(this, output);
-		});
-		memory_board.appendChild(div);*/
-	/*}
-
-}*/
-
 function newBoard() {
     var div;
     var output = "";
